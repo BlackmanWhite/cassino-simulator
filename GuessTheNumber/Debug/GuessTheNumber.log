@@ -1,0 +1,14 @@
+﻿  pch.cpp
+  GuessTheNumber.cpp
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(76): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(105): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(221): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(240): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(253): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(259): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(268): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(274): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(279): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(284): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(304): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
+c:\users\valen\source\repos\guessthenumber\guessthenumber\guessthenumber.cpp(309): warning C6282: Operador incorreto:  atribuição de constante em contexto Boolean. Considere o uso de "==" em vez disso.
