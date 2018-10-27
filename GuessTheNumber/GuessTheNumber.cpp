@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -8,10 +8,10 @@ using namespace std;
 
 // User
 string playerName;
-unsigned int money  = 100;
+unsigned int money = 100;
 
 // Bank
-unsigned int bankBalance = 20;
+unsigned int bankBalance = 10;
 int bankDebt;
 short int bankInterest;
 
@@ -24,16 +24,17 @@ short unsigned int dice;
 unsigned int moneyBet;
 
 // --- Blackjack ---
-short int cardNum;
+short unsigned int cardNum;
 bool gameOver = false;
 bool firstTurn = true;
 // Player
-short int pTotal;
+short unsigned int pTotal;
 bool pStand = false;
 // CPU
-short int cpuTotal;
-short int cpuChoice;
+short unsigned int cpuTotal;
+short unsigned int cpuChoice;
 bool cpuStand = false;
+short unsigned int cpuDifficulty = 2; // 1 = Safe, 2 = Normal, 3 = Risky
 
 // App
 const string help = "\n=============== Commands ===============\n[1] Cassino\n[2] Bank\n[3] Help\n[4] Options\n[5] Exit\n\n";
@@ -63,7 +64,7 @@ int input() {
 }
 
 bool options() {
-	std::cout << "===== Options =====\n[1] Name: " << playerName << endl << "[2] Return\n\n";
+	std::cout << "===== Options =====\n[1] Name: " << playerName << endl << "[2] CPU difficulty: " << cpuDifficulty << endl << "[3] Return\n\n";
 	input();
 	if (prompt == 1) {
 		std::cout << "\nName: ";
@@ -72,6 +73,12 @@ bool options() {
 		options();
 	}
 	else if (prompt == 2) {
+		std::cout << "\nCPU difficulty: ";
+		cin >> cpuDifficulty;
+		std::cout << endl;
+		options();
+	}
+	else if (prompt == 3) {
 		return execMenu = true;
 	}
 }
@@ -80,7 +87,7 @@ bool gamble() {
 	getBet();
 	std::cout << "\nChoose a number (0-9): ";
 	std::cin >> bet;
-	
+
 	dice = rand() % 8 + 1;
 	std::cout << "\nNumber rolled was " << dice << endl;
 	if (bet == dice) {
@@ -105,16 +112,38 @@ bool gamble() {
 }
 
 void blackjackCPU(int _cpuTotal, int _playerTotal) {
-	//static const unsigned hit_values = (_cpuTotal < 14) | (_cpuTotal < _playerTotal);
-	//static const unsigned stand_values = (_cpuTotal > 15 && _cpuTotal > _playerTotal);
-
-	if (_cpuTotal == cpuTotal < 13 || _cpuTotal < _playerTotal) {
-		// Hit
-		cpuChoice = 1;
+	if (cpuDifficulty = 2) {
+		// Normal
+		if (_cpuTotal == cpuTotal <= 13 || _cpuTotal < _playerTotal) {
+			// Hit
+			cpuChoice = 1;
+		}
+		else if (_cpuTotal > 13 && _cpuTotal > _playerTotal) {
+			// Stand
+			cpuChoice = 2;
+		}
 	}
-	else if (_cpuTotal > 14 && _cpuTotal > _playerTotal) {
-		// Stand
-		cpuChoice = 2;
+	else if (cpuDifficulty = 1) {
+		// Safe
+		if (_cpuTotal == cpuTotal <= 8 || _cpuTotal < _playerTotal) {
+			// Hit
+			cpuChoice = 1;
+		}
+		else if (_cpuTotal > 8 && _cpuTotal > _playerTotal) {
+			// Stand
+			cpuChoice = 2;
+		}
+	}
+	else if (cpuDifficulty = 3) {
+		// Risky
+		if (_cpuTotal == cpuTotal <= 17 || _cpuTotal < _playerTotal) {
+			// Hit
+			cpuChoice = 1;
+		}
+		else if (_cpuTotal > 17 && _cpuTotal > _playerTotal) {
+			// Stand
+			cpuChoice = 2;
+		}
 	}
 }
 
@@ -129,7 +158,7 @@ bool blackjack() {
 	cpuStand = false;
 	getBet();
 	while (gameOver == false) {
-		
+
 		if (pStand == false) {
 			if (firstTurn == false) {
 				std::cout << "\nPlayer chooses to hit";
@@ -197,7 +226,7 @@ bool blackjack() {
 
 bool bank() {
 	std::cout << "\n===== " << playerName << "'s bank account =====\nBalance: " << bankBalance << "\nDebts: " << bankDebt << "\nMoney in-hand: " << money;
-	std::cout << "\n\n[1] Deposit\n[2] Withdraw\n[3] Return\n";
+	std::cout << "\n\n[1] Deposit\n[2] Withdraw\n[3] Loans\n[4] Return\n\n";
 	input();
 	if (prompt == 1) {
 		// Deposit
@@ -230,6 +259,10 @@ bool bank() {
 		}
 	}
 	else if (prompt == 3) {
+		// Loans
+		return execMenu = true;
+	}
+	else if (prompt == 4) {
 		// Return
 		return execMenu = true;
 	}
@@ -303,7 +336,7 @@ int main()
 	isRunning = true;
 	std::cout << "Enter your name: ";
 	std::cin >> playerName;
-	
+
 	std::cout << "\nHello " << playerName << "!\nWelcome to the virtual cassino\nHere you can bet in various games\nI gave you 100$ so you can start with something, don't waste all in one bet\nIn the bank you can deposit some extra cash to make profit over time\nAlso, loans are avaliable in the banks if you need some money\nNow go out there and make some profit!\n\n";
 	menu();
 	while (isRunning == true) {
@@ -317,3 +350,4 @@ int main()
 		}
 	}
 }
+
