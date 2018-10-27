@@ -1,2 +1,2 @@
 # cassino-simulator
-A C++ cassino game/simulator, my first actual c++ project
+C++ cassino game/simulator, my first actual C++ project
